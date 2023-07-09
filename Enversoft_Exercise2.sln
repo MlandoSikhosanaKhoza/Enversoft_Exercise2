@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Enversoft_Exercise2.Test", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Enversoft_Exercise2.Software", "Enversoft_Exercise2.Software\Enversoft_Exercise2.Software.csproj", "{432B9D69-F4F2-4FC8-83B3-3833FD9BD221}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Enversoft_Exercise2.Console", "Enversoft_Exercise2.Console\Enversoft_Exercise2.Console.csproj", "{5AFF8DDF-1938-44F6-9473-B4680E9C785D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{432B9D69-F4F2-4FC8-83B3-3833FD9BD221}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{432B9D69-F4F2-4FC8-83B3-3833FD9BD221}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{432B9D69-F4F2-4FC8-83B3-3833FD9BD221}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5AFF8DDF-1938-44F6-9473-B4680E9C785D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5AFF8DDF-1938-44F6-9473-B4680E9C785D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5AFF8DDF-1938-44F6-9473-B4680E9C785D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5AFF8DDF-1938-44F6-9473-B4680E9C785D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
