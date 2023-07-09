@@ -9,5 +9,6 @@ namespace Enversoft_Exercise2.Software
     public interface IPersonService
     {
         Dictionary<string, int> GetNameFrequencies();
+        string[] GetOrderedAddresses();
     }
 }

@@ -19,7 +19,80 @@ namespace Enversoft_Exercise2.Test
             _personService =new PersonService(_readCsvService);
         }
 
+        [Fact]
+        public void Person_GetOrderedAddresses_ReturnStringArray()
+        {
+            //Arrange
+            List<Person> personList = new List<Person>();
+            Random random = new Random();
+            #region Test Data
+            personList.Add(new Person
+            {
+                FirstName = $"John",
+                LastName = $"Smit",
+                Address = $"50 Zurusky Dr",
+                PhoneNumber = random.Next(999999999).ToString("D10")
+            });
+            personList.Add(new Person
+            {
+                FirstName = $"Dewald",
+                LastName = "Bekker",
+                Address = $"31 Clifton Rd",
+                PhoneNumber = random.Next(999999999).ToString("D10")
+            });
+            personList.Add(new Person
+            {
+                FirstName = $"Johan",
+                LastName = "Smith",
+                Address = $"11 Moonsheeka Road",
+                PhoneNumber = random.Next(999999999).ToString("D10")
+            });
+            personList.Add(new Person
+            {
+                FirstName = $"Bradley",
+                LastName = "Smith",
+                Address = $"22 Jones Rd",
+                PhoneNumber = random.Next(999999999).ToString("D10")
+            });
+            personList.Add(new Person
+            {
+                FirstName = $"Koos",
+                LastName = "Bekker",
+                Address = $"12 Acton St",
+                PhoneNumber = random.Next(999999999).ToString("D10")
+            });
+            personList.Add(new Person
+            {
+                FirstName = $"Marietjie",
+                LastName = "Bekker",
+                Address = $"8 Melinda St",
+                PhoneNumber = random.Next(999999999).ToString("D10")
+            });
+            personList.Add(new Person
+            {
+                FirstName = $"Khumbulani",
+                LastName = "Mkhize",
+                Address = $"15 Makanawi St",
+                PhoneNumber = random.Next(999999999).ToString("D10")
+            });
+            personList.Add(new Person
+            {
+                FirstName = $"Siyabonga",
+                LastName = "Mkhize",
+                Address = $"34 Khulula Rd",
+                PhoneNumber = random.Next(999999999).ToString("D10")
+            });
+            #endregion Test Data
+            FakeItEasy.A.CallTo(() => _readCsvService.GetPeople()).Returns(personList);
 
+            //Act
+            string[] addresses = _personService.GetOrderedAddresses();
+
+            //Assert
+            addresses.Should().HaveElementAt(0, "12 Acton St");
+            addresses.Should().HaveElementAt(1, "31 Clifton Rd");
+            addresses.Should().HaveElementAt(2, "22 Jones Rd");
+        }
 
         [Fact]
         public void PersonService_GetNameFrequencies_ReturnStrictValues()

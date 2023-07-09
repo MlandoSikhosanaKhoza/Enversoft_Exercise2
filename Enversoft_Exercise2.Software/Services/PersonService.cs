@@ -13,9 +13,16 @@ namespace Enversoft_Exercise2.Software
             _readCsvService = readCsvService;
         }
 
+        public string[] GetOrderedAddresses()
+        {
+            List<Person> people = _readCsvService.GetPeople();
+            string[] addresses = people.OrderBy(p=>p.Address.Split(' ')[1]).Select(p=>p.Address).ToArray();
+            return addresses;
+        }
+
         public Dictionary<string,int> GetNameFrequencies()
         {
-            Dictionary<string,int> nameFrequencies = new Dictionary<string, int>();
+            Dictionary<string,int> nameFrequencies = new();
             
             //Read CSV File
             List<Person> people = _readCsvService.GetPeople();
