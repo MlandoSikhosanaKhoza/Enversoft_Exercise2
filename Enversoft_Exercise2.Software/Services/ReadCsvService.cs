@@ -6,19 +6,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Enversoft_Exercise2.Software.Services
+namespace Enversoft_Exercise2.Software
 {
     public class ReadCsvService : IReadCsvService
     {
         public List<Person> GetPeople()
         {
             List<Person> people = new List<Person>();
-            StreamReader streamReader = new StreamReader("./DataCSV/Data.csv");
+            StreamReader streamReader = new StreamReader("Data.csv");
             using(var csv=new CsvReader(streamReader,CultureInfo.InvariantCulture))
             {
                 people=csv.GetRecords<Person>().ToList();
             }
-            
             return people;
         }
     }
